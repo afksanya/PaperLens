@@ -1,0 +1,29 @@
+{
+  "skill_name": "paper-notes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我读一下这篇论文，给我生成阅读笔记：/path/to/paper.pdf",
+      "expected_output": "结构化笔记，包含 YAML frontmatter（title/authors/year/venue/tags/date/type）、一句话总结、背景与动机、核心贡献、方法、实验结果、局限性、延伸阅读；双语风格，技术术语保留英文；默认只在聊天中展示，不自动保存文件",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我读一下这篇长论文（70多页），给我生成笔记：/path/to/long-paper.pdf",
+      "expected_output": "正确分批读取长 PDF（分多次 Read 调用），笔记覆盖核心章节，注明哪些章节因篇幅被略读；输出包含完整 Obsidian frontmatter",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "帮我对这个文件夹里的所有论文做一个综述笔记，需要有参考文献：/path/to/papers/",
+      "expected_output": "先列出文件夹中的 PDF 文件，然后读取每篇，生成含论文总览表的综述笔记、各方法对比分析、研究趋势，以及 APA 格式参考文献列表；综述中对各论文使用 [[wiki链接]] 格式",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我读 /path/to/paper.pdf 并生成笔记，然后保存到我的 Obsidian vault",
+      "expected_output": "生成笔记后，检查是否存在 Papers/ 文件夹，将笔记以合适文件名保存，并告知完整路径",
+      "files": []
+    }
+  ]
+}

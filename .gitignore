@@ -1,0 +1,5 @@
+# Workspace and eval outputs
+*-workspace/
+__pycache__/
+*.pyc
+.DS_Store
