@@ -13,10 +13,16 @@ description: >
 
 # PaperLens — Academic Paper Notes
 
-## Step 0: Language Selection
+## Step 0: Load Config & Language
 
-**Before doing anything else**, greet the user with this exact prompt so speakers of all three
-languages can understand it:
+First, check for a config file:
+```bash
+cat .paperlens.yml 2>/dev/null
+```
+If it exists, read `lang` (skips the language prompt) and `output_dir` (default save location).
+
+**Language selection** — skip if `lang` is set in config or obvious from the user's message.
+Otherwise prompt:
 
 > 请选择笔记语言 / メモの言語を選んでください / Please choose your note language:
 >
@@ -24,10 +30,7 @@ languages can understand it:
 > 2. 日本語
 > 3. English
 
-Wait for the user's reply, then set `LANG` to one of: `zh`, `ja`, `en`.
-
-If the user's original message already makes their language obvious (e.g., they wrote entirely
-in Japanese, or said "in English please"), skip the prompt and infer the language directly.
+Set `LANG` to `zh`, `ja`, or `en`. All output uses `LANG`; technical terms stay in English.
 
 All subsequent output — note body, confirmation messages, questions — must use `LANG`.
 Technical terms (model names, dataset names, metric names) are always kept in English regardless
