@@ -6,6 +6,7 @@ description: >
   like "帮我读这篇论文", "给我生成笔记", "総説を書いて", "論文を読んで", "read this paper", "generate notes",
   "帮我写综述", "survey these papers", or any time a PDF of a research paper is mentioned. Also
   trigger when the user points to a folder containing papers and wants a summary or comparison.
+  Also triggered explicitly via the /paperlens slash command.
   Handles BOTH single-paper notes AND multi-paper survey notes with references.
   Do NOT trigger for PDF manipulation (merging, splitting, OCR) — use the pdf skill for those.
 ---

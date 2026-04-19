@@ -39,7 +39,7 @@
 
 此 skill 适用于 [Claude Code](https://claude.ai/code) 及 Obsidian 的 [Claudian 插件](https://github.com/YishenTu/claudian)。
 
-**方式一：通过 `.skill` 文件安装（推荐）**
+**第一步：安装 Skill**
 
 从 [Releases](../../releases) 页面下载最新的 `PaperLens.skill` 文件，然后在 Claude Code 中运行：
 
@@ -47,19 +47,32 @@
 /skills install PaperLens.skill
 ```
 
-**方式二：手动安装**
-
-将 `PaperLens/` 文件夹复制到你的 Claude skills 目录：
+或手动复制：
 
 ```bash
-# macOS
 cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
-
-# 或 Claude Code 项目级 skill
-cp -r PaperLens/ .claude/skills/
 ```
 
+**第二步：安装斜杠指令（可选但推荐）**
+
+```bash
+cp commands/paperlens.md ~/.claude/commands/
+```
+
+安装后即可直接用 `/paperlens` 触发，无需自然语言描述。
+
 ### 使用方法
+
+**方式一：斜杠指令（推荐）**
+
+```bash
+/paperlens /path/to/paper.pdf                        # 单篇精读
+/paperlens /path/to/paper1.pdf /path/to/paper2.pdf   # 多篇综述
+/paperlens /path/to/folder/                          # 整个文件夹综述
+/paperlens                                           # 无参数，提示输入路径
+```
+
+**方式二：自然语言触发**
 
 在 Claude Code 或 Obsidian Claudian 插件中直接用自然语言触发：
 
@@ -176,7 +189,7 @@ RNN 序列建模存在长程依赖问题和无法并行化的缺陷；CNN 虽可
 
 [Claude Code](https://claude.ai/code) および Obsidian の [Claudian プラグイン](https://github.com/YishenTu/claudian) で動作します。
 
-**方法 1：`.skill` ファイルからインストール（推奨）**
+**ステップ 1：Skill のインストール**
 
 [Releases](../../releases) から最新の `PaperLens.skill` をダウンロードし、Claude Code で実行：
 
@@ -184,21 +197,34 @@ RNN 序列建模存在长程依赖问题和无法并行化的缺陷；CNN 虽可
 /skills install PaperLens.skill
 ```
 
-**方法 2：手動インストール**
-
-`PaperLens/` フォルダを Claude の skills ディレクトリにコピー：
+または手動でコピー：
 
 ```bash
-# macOS
 cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
-
-# またはプロジェクト単位のインストール
-cp -r PaperLens/ .claude/skills/
 ```
+
+**ステップ 2：スラッシュコマンドのインストール（任意・推奨）**
+
+```bash
+cp commands/paperlens.md ~/.claude/commands/
+```
+
+インストール後は `/paperlens` で直接呼び出せます。
 
 ### 使い方
 
-Claude Code または Obsidian の Claudian プラグインで、自然言語で呼び出せます：
+**方法 1：スラッシュコマンド（推奨）**
+
+```bash
+/paperlens /path/to/paper.pdf                        # 単論文メモ
+/paperlens /path/to/paper1.pdf /path/to/paper2.pdf   # 複数論文サーベイ
+/paperlens /path/to/folder/                          # フォルダ一括サーベイ
+/paperlens                                           # 引数なし → パスを入力
+```
+
+**方法 2：自然言語での呼び出し**
+
+Claude Code または Obsidian の Claudian プラグインで自然言語でも起動できます：
 
 ```
 この論文を読んでメモを作成してください：/path/to/paper.pdf
@@ -277,7 +303,7 @@ Issue や Pull Request を歓迎します！改善のアイデア例：
 
 PaperLens works with [Claude Code](https://claude.ai/code) and the Obsidian [Claudian plugin](https://github.com/YishenTu/claudian).
 
-**Option 1: Install via `.skill` file (recommended)**
+**Step 1: Install the Skill**
 
 Download the latest `PaperLens.skill` from [Releases](../../releases), then in Claude Code run:
 
@@ -285,21 +311,34 @@ Download the latest `PaperLens.skill` from [Releases](../../releases), then in C
 /skills install PaperLens.skill
 ```
 
-**Option 2: Manual installation**
-
-Copy the `PaperLens/` folder to your Claude skills directory:
+Or manually:
 
 ```bash
-# macOS
 cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
-
-# Or project-level skill
-cp -r PaperLens/ .claude/skills/
 ```
+
+**Step 2: Install the Slash Command (optional but recommended)**
+
+```bash
+cp commands/paperlens.md ~/.claude/commands/
+```
+
+This enables the `/paperlens` command for explicit invocation.
 
 ### Usage
 
-Trigger with natural language in Claude Code or the Obsidian Claudian plugin:
+**Option 1: Slash command (recommended)**
+
+```bash
+/paperlens /path/to/paper.pdf                        # single paper
+/paperlens /path/to/paper1.pdf /path/to/paper2.pdf   # survey
+/paperlens /path/to/folder/                          # survey from folder
+/paperlens                                           # no args → prompts for path
+```
+
+**Option 2: Natural language**
+
+You can also trigger PaperLens by describing what you want:
 
 ```
 Read this paper and generate notes: /path/to/paper.pdf
