@@ -1,6 +1,6 @@
 # PaperLens — Academic Paper Reading Skill for Claude
 
-**中文** | [English](#english)
+**中文** | [日本語](#日本語) | [English](#english)
 
 ---
 
@@ -30,7 +30,8 @@
 - APA 格式参考文献
 
 **输出风格**
-- 双语对照：章节标题标注英文，技术术语保留英文原词
+- 启动时询问笔记语言：中文 / 日本語 / English，三选一
+- 模型名、数据集名、指标名等技术术语始终保留英文
 - 内容具体：有数字、有数据集名，不泛泛而谈
 - 默认只在聊天中展示，需要时才保存为 `.md` 文件
 
@@ -141,6 +142,106 @@ RNN 序列建模存在长程依赖问题和无法并行化的缺陷；CNN 虽可
 
 ---
 
+## 日本語
+
+**PaperLens** は、学術論文の PDF を読み込み、Obsidian 対応の Markdown 形式で構造化された読書メモを生成する Claude Code Skill です。一本の論文の精読メモと、複数論文のサーベイメモの両方に対応しています。
+
+### 機能
+
+**単論文メモモード**
+- PDF をネイティブ読み込み（長い論文はバッチ処理）
+- 以下の構成で標準化されたメモを生成：
+  - YAML frontmatter（Obsidian Dataview 対応）
+  - 一言まとめ
+  - 背景と動機
+  - 主な貢献
+  - 手法（LaTeX 数式対応）
+  - 実験結果（具体的な数値付き）
+  - 限界
+  - 関連文献（`[[wiki リンク]]` 付き）
+
+**サーベイモード**
+- フォルダ内の複数論文を一括読み込み
+- 比較表付きサーベイメモを生成
+- 手法比較・実験結果比較
+- 研究動向とオープン課題
+- APA 形式の参考文献
+
+**出力スタイル**
+- 起動時に中文 / 日本語 / English の 3 言語から選択可能
+- 内容は具体的：数値・データセット名を明記、曖昧な表現を使わない
+- デフォルトはチャット内表示のみ、必要なときだけ `.md` ファイルに保存
+
+### インストール
+
+[Claude Code](https://claude.ai/code) および Obsidian の [Claudian プラグイン](https://github.com/YishenTu/claudian) で動作します。
+
+**方法 1：`.skill` ファイルからインストール（推奨）**
+
+[Releases](../../releases) から最新の `PaperLens.skill` をダウンロードし、Claude Code で実行：
+
+```
+/skills install PaperLens.skill
+```
+
+**方法 2：手動インストール**
+
+`PaperLens/` フォルダを Claude の skills ディレクトリにコピー：
+
+```bash
+# macOS
+cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
+
+# またはプロジェクト単位のインストール
+cp -r PaperLens/ .claude/skills/
+```
+
+### 使い方
+
+Claude Code または Obsidian の Claudian プラグインで、自然言語で呼び出せます：
+
+```
+この論文を読んでメモを作成してください：/path/to/paper.pdf
+```
+
+```
+これらの論文のサーベイメモを書いてください（APA 参考文献付き）：
+- /path/to/paper1.pdf
+- /path/to/paper2.pdf
+- /path/to/paper3.pdf
+```
+
+```
+/path/to/paper.pdf を読んで、メモを Obsidian vault に保存してください
+```
+
+**Zotero との連携**
+
+Zotero で文献管理をしている場合、PDF は通常 `~/Zotero/storage/` 以下に保存されています：
+
+```
+この論文を読んでください：~/Zotero/storage/XXXXXXXX/Author - Year - Title.pdf
+```
+
+### Obsidian 連携
+
+生成されたメモは Obsidian に完全対応：
+
+- **YAML frontmatter**：Dataview プラグインでクエリ可能（年・タグ・種別でフィルタリング）
+- **`[[wiki リンク]]`**：サーベイメモや関連文献で使用 — Obsidian グラフビューで論文間の関係を可視化
+- **標準 Markdown**：LaTeX 数式は Obsidian の MathJax でレンダリング
+
+[Claudian](https://github.com/YishenTu/claudian) プラグインと組み合わせて Obsidian 内で直接使うのがおすすめです。
+
+### コントリビューション
+
+Issue や Pull Request を歓迎します！改善のアイデア例：
+- 他の引用形式のサポート（Chicago、Vancouver など）
+- 分野別ノートテンプレート（医学・法律・経済など）
+- 他のノートツール（Logseq、Notion）への対応
+
+---
+
 ## English
 
 **PaperLens** is a Claude Code Skill that reads academic paper PDFs and generates structured reading notes in Obsidian-compatible Markdown. Supports both single-paper notes and multi-paper survey notes.
@@ -167,7 +268,8 @@ RNN 序列建模存在长程依赖问题和无法并行化的缺陷；CNN 虽可
 - APA-formatted references
 
 **Output Style**
-- Bilingual: section headings annotated in English, technical terms preserved in English
+- Asks for preferred language at startup: 中文 / 日本語 / English
+- Technical terms (model names, dataset names, metrics) always kept in English
 - Specific: numbers, dataset names, no vague statements
 - Shows in chat by default; saves to `.md` file only when asked
 
