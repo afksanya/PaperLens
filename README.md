@@ -1,4 +1,4 @@
-# paper-notes — Academic Paper Reading Skill for Claude
+# PaperLens — Academic Paper Reading Skill for Claude
 
 **中文** | [English](#english)
 
@@ -40,22 +40,22 @@
 
 **方式一：通过 `.skill` 文件安装（推荐）**
 
-从 [Releases](../../releases) 页面下载最新的 `paper-notes.skill` 文件，然后在 Claude Code 中运行：
+从 [Releases](../../releases) 页面下载最新的 `PaperLens.skill` 文件，然后在 Claude Code 中运行：
 
 ```
-/skills install paper-notes.skill
+/skills install PaperLens.skill
 ```
 
 **方式二：手动安装**
 
-将 `paper-notes/` 文件夹复制到你的 Claude skills 目录：
+将 `PaperLens/` 文件夹复制到你的 Claude skills 目录：
 
 ```bash
 # macOS
-cp -r paper-notes/ ~/Library/Application\ Support/Claude/skills/
+cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
 
 # 或 Claude Code 项目级 skill
-cp -r paper-notes/ .claude/skills/
+cp -r PaperLens/ .claude/skills/
 ```
 
 ### 使用方法
@@ -96,7 +96,7 @@ title: "Attention Is All You Need"
 authors: ["Vaswani, Ashish", "Shazeer, Noam"]
 year: 2017
 venue: "NeurIPS 2017"
-tags: [paper-notes, transformer, NLP, attention]
+tags: [paperlens, transformer, NLP, attention]
 date: 2024-01-15
 type: paper-note
 arxiv: "1706.03762"
@@ -143,7 +143,7 @@ RNN 序列建模存在长程依赖问题和无法并行化的缺陷；CNN 虽可
 
 ## English
 
-A Claude Code Skill that reads academic paper PDFs and generates structured reading notes in Obsidian-compatible Markdown. Supports both single-paper notes and multi-paper survey notes.
+**PaperLens** is a Claude Code Skill that reads academic paper PDFs and generates structured reading notes in Obsidian-compatible Markdown. Supports both single-paper notes and multi-paper survey notes.
 
 ### Features
 
@@ -173,26 +173,26 @@ A Claude Code Skill that reads academic paper PDFs and generates structured read
 
 ### Installation
 
-This skill works with [Claude Code](https://claude.ai/code) and the Obsidian [Claudian plugin](https://github.com/YishenTu/claudian).
+PaperLens works with [Claude Code](https://claude.ai/code) and the Obsidian [Claudian plugin](https://github.com/YishenTu/claudian).
 
 **Option 1: Install via `.skill` file (recommended)**
 
-Download the latest `paper-notes.skill` from [Releases](../../releases), then in Claude Code run:
+Download the latest `PaperLens.skill` from [Releases](../../releases), then in Claude Code run:
 
 ```
-/skills install paper-notes.skill
+/skills install PaperLens.skill
 ```
 
 **Option 2: Manual installation**
 
-Copy the `paper-notes/` folder to your Claude skills directory:
+Copy the `PaperLens/` folder to your Claude skills directory:
 
 ```bash
 # macOS
-cp -r paper-notes/ ~/Library/Application\ Support/Claude/skills/
+cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
 
 # Or project-level skill
-cp -r paper-notes/ .claude/skills/
+cp -r PaperLens/ .claude/skills/
 ```
 
 ### Usage

@@ -1,5 +1,5 @@
 ---
-name: paper-notes
+name: PaperLens
 description: >
   Use this skill whenever the user wants to read, understand, summarize, or take notes on academic
   papers or research papers — especially when one or more PDF files are involved. Trigger on phrases
@@ -10,7 +10,7 @@ description: >
   Do NOT trigger for PDF manipulation (merging, splitting, OCR) — use the pdf skill for those.
 ---
 
-# Paper Notes — 学术论文笔记生成
+# PaperLens — 学术论文笔记生成
 
 ## Overview: Two Modes
 
@@ -58,7 +58,7 @@ title: "[论文完整标题]"
 authors: ["[Author1 Last, First]", "[Author2 Last, First]"]
 year: [YYYY]
 venue: "[会议/期刊全称, Year]"
-tags: [paper-notes, [领域标签], [方法标签]]
+tags: [paperlens, [领域标签], [方法标签]]
 date: [今天日期 YYYY-MM-DD]
 type: paper-note
 arxiv: "[arXiv ID 如有]"
