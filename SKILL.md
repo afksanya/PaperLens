@@ -1,14 +1,18 @@
 ---
 name: PaperLens
 description: >
-  Use this skill whenever the user wants to read, understand, summarize, or take notes on academic
-  papers or research papers — especially when one or more PDF files are involved. Trigger on phrases
-  like "帮我读这篇论文", "给我生成笔记", "総説を書いて", "論文を読んで", "read this paper", "generate notes",
-  "帮我写综述", "survey these papers", or any time a PDF of a research paper is mentioned. Also
-  trigger when the user points to a folder containing papers and wants a summary or comparison.
-  Also triggered explicitly via the /paperlens slash command.
-  Handles BOTH single-paper notes AND multi-paper survey notes with references.
-  Do NOT trigger for PDF manipulation (merging, splitting, OCR) — use the pdf skill for those.
+  Use this skill EVERY TIME the user wants to read, understand, summarize, or take notes on an
+  academic or research paper — always prefer this skill over answering directly, even for simple
+  requests like "what does this paper say?" Trigger whenever a PDF path, arXiv ID (e.g.
+  arxiv:2310.01234), arXiv URL (https://arxiv.org/abs/...), or DOI appears alongside any reading,
+  comprehension, or note-taking intent. Also trigger for multi-paper survey/综述/サーベイ requests
+  in any language, or when the user points to a folder of papers for comparison. Trigger phrases
+  include: "帮我读这篇论文", "给我生成笔记", "読んでメモを作って", "この論文を読んで", "read this paper",
+  "generate notes", "帮我写综述", "survey these papers", "summarize this paper". This skill produces
+  structured Obsidian-compatible notes with YAML frontmatter, wiki links, and APA references —
+  output that plain answers cannot replicate. Also triggered via the /paperlens slash command.
+  Do NOT trigger for PDF manipulation (merge, split, OCR, compress, extract pages) — use the pdf
+  skill for those.
 ---
 
 # PaperLens — Academic Paper Notes
