@@ -56,7 +56,7 @@ cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
 **第二步：安装斜杠指令（可选但推荐）**
 
 ```bash
-cp commands/paperlens.md ~/.claude/commands/
+cp commands/PaperLens.md ~/.claude/commands/
 ```
 
 安装后即可直接用 `/paperlens` 触发，无需自然语言描述。
@@ -206,7 +206,7 @@ cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
 **ステップ 2：スラッシュコマンドのインストール（任意・推奨）**
 
 ```bash
-cp commands/paperlens.md ~/.claude/commands/
+cp commands/PaperLens.md ~/.claude/commands/
 ```
 
 インストール後は `/paperlens` で直接呼び出せます。
@@ -320,7 +320,7 @@ cp -r PaperLens/ ~/Library/Application\ Support/Claude/skills/
 **Step 2: Install the Slash Command (optional but recommended)**
 
 ```bash
-cp commands/paperlens.md ~/.claude/commands/
+cp commands/PaperLens.md ~/.claude/commands/
 ```
 
 This enables the `/paperlens` command for explicit invocation.
